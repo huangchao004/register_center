@@ -15,6 +15,7 @@ public class UserServiceImpl implements IUserServiceApi {
     @Override
     public ResponseBody register(Map<String, Object> params) {
         logger.info("register "+params.toString());
+
         return ResponseBody.builder().code(200).message("SUCCESS").build();
     }
 
