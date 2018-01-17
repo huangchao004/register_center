@@ -7,6 +7,7 @@ public enum  ResponseCode {
 
      SUCCESS(200,"SUCCESS"),
      USERNAME_EXISTS(10002,"用户名已存在"),
+     USER_NOT_EXISTS(10003,"用户名或者密码错误"),
      NECESSARY_PARAMS_EMPTY(10001,"必要参数为空");
 
      private Integer code;

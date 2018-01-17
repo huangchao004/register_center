@@ -6,6 +6,7 @@ import com.curry.like.user.user_service.service.UserOperatorService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Map;
@@ -18,14 +19,14 @@ public class UserServiceImpl implements IUserServiceApi {
     private UserOperatorService userOperatorService;
 
     @Override
-    public ResponseBody register(Map<String, Object> params) {
+    public ResponseBody register(@RequestBody Map<String, Object> params) {
         logger.info("register " + params.toString());
         return userOperatorService.registerService(params);
     }
 
     @Override
-    public ResponseBody login(Map<String, Object> params) {
+    public ResponseBody login(@RequestBody Map<String, Object> params) {
         logger.info("login " + params.toString());
-        return ResponseBody.builder().code(200).message("SUCCESS").build();
+        return userOperatorService.loginService(params);
     }
 }
