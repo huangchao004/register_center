@@ -3,11 +3,11 @@ package com.curry.like.user.user_service.service;
 import com.curry.like.api.api_service.util.DateUtils;
 import com.curry.like.api.api_service.util.MD5Util;
 import com.curry.like.api.api_service.util.RandomUtils;
-import com.curry.like.model.model.entity.ResponseBody;
-import com.curry.like.model.model.entity.TAccountInfoEntity;
+import com.curry.like.model.model.response.ResponseBody;
+import com.curry.like.model.model.response.ResponseCode;
+import com.curry.like.user.user_service.entity.TAccountInfoEntity;
 import com.curry.like.user.user_service.repository.IUserOperatorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.orm.jpa.EntityManagerFactoryUtils;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityManager;
@@ -41,14 +41,12 @@ public class UserOperatorService {
                 tAccountInfoEntity.setEmail(email);
                 iUserOperatorRepository.save(tAccountInfoEntity);
                 entityManager.flush();
-                return ResponseBody.builder().code(200).message("SUCCESS").obj(tAccountInfoEntity.getAccountId()).build();
+                return ResponseBody.builder().code(ResponseCode.SUCCESS.getCode()).message(ResponseCode.SUCCESS.getMessage()).obj(tAccountInfoEntity.getAccountId()).build();
             } else {
-                return ResponseBody.builder().code(10002).message("用户名已存在").obj(tAccountInfoEntity.getAccountId()).build();
+                return ResponseBody.builder().code(ResponseCode.USERNAME_EXISTS.getCode()).message(ResponseCode.USERNAME_EXISTS.getMessage()).obj(tAccountInfoEntity.getAccountId()).build();
             }
         } else {
-            return ResponseBody.builder().code(10002).message("必要参数为空").build();
+            return ResponseBody.builder().code(ResponseCode.NECESSARY_PARAMS_EMPTY.getCode()).message(ResponseCode.NECESSARY_PARAMS_EMPTY.getMessage()).build();
         }
-
-
     }
 }

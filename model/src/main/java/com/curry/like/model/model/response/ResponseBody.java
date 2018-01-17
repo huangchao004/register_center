@@ -1,4 +1,4 @@
-package com.curry.like.model.model.entity;
+package com.curry.like.model.model.response;
 
 
 import lombok.AllArgsConstructor;

@@ -1,7 +1,7 @@
 package com.curr.like.pc.pc_like_hot.feign.callback;
 
 import com.curr.like.pc.pc_like_hot.feign.IPcUserService;
-import com.curry.like.model.model.entity.ResponseBody;
+import com.curry.like.model.model.response.ResponseBody;
 import org.springframework.stereotype.Component;
 
 import java.util.Map;

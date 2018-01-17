@@ -1,13 +1,12 @@
-package com.curry.like.model.model.entity;
+package com.curry.like.user.user_service.entity;
 
-import javax.annotation.Generated;
 import javax.persistence.*;
 
 @Entity
 @Table(name = "t_account_info", schema = "hot")
 public class TAccountInfoEntity {
     private int id;
-    private String accountId;
+    private String  accountId;
     private String username;
     private String password;
     private String createTime;
@@ -34,7 +33,7 @@ public class TAccountInfoEntity {
         return accountId;
     }
 
-    public void setAccountId(String accountId) {
+    public void setAccountId(String  accountId) {
         this.accountId = accountId;
     }
 
@@ -158,7 +157,7 @@ public class TAccountInfoEntity {
     public String toString() {
         return "TAccountInfoEntity{" +
                 "id=" + id +
-                ", accountId=" + accountId +
+                ", accountId='" + accountId + '\'' +
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 ", createTime='" + createTime + '\'' +

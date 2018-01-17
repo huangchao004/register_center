@@ -1,6 +1,6 @@
 package com.curry.like.user.user_service.repository;
 
-import com.curry.like.model.model.entity.TAccountInfoEntity;
+import com.curry.like.user.user_service.entity.TAccountInfoEntity;
 import org.springframework.data.repository.CrudRepository;
 
 /**
