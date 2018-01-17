@@ -14,7 +14,7 @@ public interface IUserServiceApi {
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     ResponseBody register(@RequestBody Map<String, Object> params);
 
-    @RequestMapping(value = "register", method = RequestMethod.POST)
+    @RequestMapping(value = "registers", method = RequestMethod.POST)
     ResponseBody login(@RequestBody Map<String, Object> params);
 
 

@@ -2,8 +2,10 @@ package com.curry.like.user.user_service.impl;
 
 import com.curry.like.api.api_service.user.IUserServiceApi;
 import com.curry.like.model.model.entity.ResponseBody;
+import com.curry.like.user.user_service.service.UserOperatorService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Map;
@@ -12,6 +14,8 @@ import java.util.Map;
 public class UserServiceImpl implements IUserServiceApi {
 
     private Logger  logger = LoggerFactory.getLogger(UserServiceImpl.class);
+    @Autowired
+    private UserOperatorService userOperatorService;
     @Override
     public ResponseBody register(Map<String, Object> params) {
         logger.info("register "+params.toString());

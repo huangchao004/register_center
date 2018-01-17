@@ -9,6 +9,7 @@ import org.springframework.data.repository.CrudRepository;
 public interface IUserOperatorRepository extends CrudRepository<TAccountInfoEntity, Integer> {
 
     TAccountInfoEntity queryByUsernameAndPassword(String username, String password);
+    TAccountInfoEntity queryByUsername(String username);
 
     TAccountInfoEntity queryByEmailAndPassword(String email, String password);
 

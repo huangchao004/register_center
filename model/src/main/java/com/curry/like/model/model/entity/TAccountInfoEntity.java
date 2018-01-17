@@ -7,7 +7,7 @@ import javax.persistence.*;
 @Table(name = "t_account_info", schema = "hot")
 public class TAccountInfoEntity {
     private int id;
-    private int accountId;
+    private String accountId;
     private String username;
     private String password;
     private String createTime;
@@ -30,11 +30,11 @@ public class TAccountInfoEntity {
 
     @Basic
     @Column(name = "account_id")
-    public int getAccountId() {
+    public String getAccountId() {
         return accountId;
     }
 
-    public void setAccountId(int accountId) {
+    public void setAccountId(String accountId) {
         this.accountId = accountId;
     }
 
@@ -126,7 +126,7 @@ public class TAccountInfoEntity {
         TAccountInfoEntity that = (TAccountInfoEntity) o;
 
         if (id != that.id) return false;
-        if (accountId != that.accountId) return false;
+        if (accountId != null ? !accountId.equals(that.accountId) : that.accountId != null) return false;
         if (username != null ? !username.equals(that.username) : that.username != null) return false;
         if (password != null ? !password.equals(that.password) : that.password != null) return false;
         if (createTime != null ? !createTime.equals(that.createTime) : that.createTime != null) return false;
@@ -142,7 +142,7 @@ public class TAccountInfoEntity {
     @Override
     public int hashCode() {
         int result = id;
-        result = 31 * result + accountId;
+        result = 31 * result + (accountId != null ? accountId.hashCode() : 0);
         result = 31 * result + (username != null ? username.hashCode() : 0);
         result = 31 * result + (password != null ? password.hashCode() : 0);
         result = 31 * result + (createTime != null ? createTime.hashCode() : 0);
